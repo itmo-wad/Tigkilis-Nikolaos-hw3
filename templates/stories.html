@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Stories</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Stories</h1>
+		<hr>
+		{% if 'logged' in session %}
+		<form action="/postStory" method="post">
+			<input type="text" size="50" placeholder="What's on your mind?" name="story" required style="height: 80px;">
+			<button type="submit">Post</button>
+			</div>
+		<hr>
+		{% endif %}
+
+		{% for post in posts %}
+        <div>
+            <h4 class="text-center">User: <strong>#{{post['author']}}</strong></h4>
+            <div>
+                <p>{{post['text']}}</p>
+            </div>
+        </div>
+        {% endfor %}
+		</form>
+	</div>
+</body>
+</html>

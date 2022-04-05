@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Login</h1>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}    
+    <form action="http://localhost:5000/auth" method="post">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Your Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Your Password" name="pass" required>
+
+        <label>
+        <input type="checkbox" checked="checked" required name="norobot" style="margin-bottom:15px"> I am not a robot!
+        </label>
+
+        <div class="clearfix">
+        <button type="button" onclick="document.location='/'">Back</button> 
+        <button type="reset">Cancel</button>
+        <button type="submit">Login</button>
+        </div>
+    </form>
+  </div>

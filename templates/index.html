@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+<h2>A simple Flask Page.</h2>
+{% for mesg in get_flashed_messages() %}
+<h4>{{ mesg }}</h4>
+{% endfor %}
+<p>This is a simple page served by Flask.</p>
+
+<ul>
+	<li><a href="signup">SignUp</a></li>
+	<li><a href="auth">Login</a></li>
+	<li><a href="stories">Stories</a></li>
+	{% if 'logged' in session %}
+	<li><a href="logout">Logout</a></li>
+	{% endif %}
+</ul>
+</body>
+</html>

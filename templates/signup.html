@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Sign Up</h1>
+    <hr>
+    <form action="http://localhost:5000/signup" method="post">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="pass" required>
+
+        <label>
+        <input type="checkbox" checked="checked" name="norobot" style="margin-bottom:15px"> I am not a robot! (now we trust you)
+        </label>
+
+        <div class="clearfix">
+        <button type="button" onclick="document.location='/'">Back</button> 
+        <button type="reset">Cancel</button>
+        <button type="submit">Sign Up</button>
+        </div>
+    </form>
+  </div>
